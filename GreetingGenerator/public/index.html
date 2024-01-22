@@ -1,0 +1,125 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Node.js Project</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e6f7ff; /* light blue */
+      text-align: center;
+      margin: 50px;
+    }
+
+    h1 {
+      color: #336699; /* darker blue */
+    }
+
+    label {
+      display: block;
+      margin: 10px 0;
+      font-size: 18px;
+      color: #555;
+    }
+
+    select, input {
+      padding: 10px;
+      font-size: 16px;
+      width: 100px;
+      margin: 5px;
+      border: 1px solid #99ccff; /* light blue border */
+      border-radius: 5px;
+      box-sizing: border-box;
+      background-color: #dff0d5; 
+    }
+
+    select:focus {
+      outline: none;
+      border-color: #66cc66; /* light green border on focus */
+    }
+
+    select option:checked {
+      background-color: #66cc66; /* light green background for selected option */
+      color: #dff0d5; /* white text for selected option */
+    }
+
+    #ageInput {
+      display: none;
+    }
+
+    #choiceContainer {
+      height: '200px';
+    }
+
+    #buttonContainer {
+      margin-top: 20px;
+    }
+
+    #rel {
+      background-color: #e6f7ff;
+      border: none;
+    }
+
+    #responseContainer {
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      text-align: left;
+    }
+
+    #submitButton {
+      padding: 10px;
+      font-size: 16px;
+      background-color: #66cc66; /* light green */
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body id = "body">
+  <h1>choose</h1>
+<div id = "choiceContainer">
+  <button id = "rel" onclick="rel()" style="display: none;"></button>
+  <label for="category">category:</label>
+  <select id="category" >
+    <option value="blessing">blessing</option>
+    <option value="song">song</option>
+    <option value="recitation">recitation</option>
+  </select>
+
+  <label  for="atmosphere">atmosphere:</label>
+  <select id="atmosphere">
+    <option value="happy">happy</option>
+    <option value="funny">funny</option>
+    <option value="excited">excited</option>
+  </select>
+
+  <label for="event">event:</label>
+  <select id="event" onchange="handleEventChange()">
+    <option value="wedding">wedding</option>
+    <option value="birthday">birthday</option>
+  </select>
+
+  <div id="ageInput" style="display: none;">
+    <label  for="age">age</label>
+    <input type="number" id="age" />
+  </div>
+</div>
+
+ 
+  <div id="buttonContainer">
+    <button id="submitButton" onclick="submitChoices()">write to me</button>
+  </div>
+
+  <div id="responseContainer" style="display: none;"></div>
+
+
+  <script src="client.js"></script>
+</body>
+</html>
