@@ -1,2 +1,2 @@
-# node1223
+# Greeting Generator
 get from openai
